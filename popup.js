@@ -6,32 +6,22 @@ document.addEventListener('DOMContentLoaded', async () => {
   const clearBtn = document.getElementById('clearFields');
 
   const createInputRow = (key = '', value = '') => {
-  const div = document.createElement('div');
-  div.className = 'pair';
+    const div = document.createElement('div');
+    div.className = 'pair';
 
-  const keyInput = document.createElement('input');
-  keyInput.placeholder = 'Key';
-  keyInput.value = key;
+    const keyInput = document.createElement('input');
+    keyInput.placeholder = 'Key';
+    keyInput.value = key;
 
-  const valueInput = document.createElement('input');
-  valueInput.placeholder = 'Value';
-  valueInput.value = value;
+    const valueInput = document.createElement('input');
+    valueInput.placeholder = 'Value';
+    valueInput.value = value;
 
-  const deleteBtn = document.createElement('button');
-  deleteBtn.className = 'delete-btn';
-  deleteBtn.textContent = '🗑️';
+    div.appendChild(keyInput);
+    div.appendChild(valueInput);
 
-  deleteBtn.addEventListener('click', () => {
-    div.remove();
-  });
-
-  div.appendChild(keyInput);
-  div.appendChild(valueInput);
-  div.appendChild(deleteBtn);
-
-  inputContainer.appendChild(div);
-};
-
+    inputContainer.appendChild(div);
+  };
 
   addPairBtn.addEventListener('click', () => createInputRow());
 
